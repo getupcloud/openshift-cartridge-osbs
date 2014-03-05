@@ -22,12 +22,12 @@ var diskSpace = "";
 var usedSpace = "";
 
 if (OSBS.config.site.on_openshift)
-    diskSpace = exec("quota | tail -1 | awk '{print $3 }'");
+    diskSpace = exec("quota | tail -1 | awk '{print $4 }'");
 else
     diskSpace = "1048576";
 
 if (OSBS.config.site.on_openshift)
-    usedSpace = exec("quota | tail -1 | awk '{print $1 }'");
+    usedSpace = exec("quota | tail -1 | awk '{print $2 }'");
 else
     usedSpace = "55724";
 /// End Module Init
